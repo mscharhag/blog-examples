@@ -10,7 +10,7 @@ import org.hibernate.HibernateException;
 public class ExceptionTranslationAspect {
 
 	@Around("execution(* com.mscharhag.exceptiontranslation.repository..*(..))")
-	public Object doStuff(ProceedingJoinPoint pjp) throws Throwable {
+	public Object translateToDataAccessException(ProceedingJoinPoint pjp) throws Throwable {
 		try {
 			return pjp.proceed();
 		} catch (HibernateException e) {
