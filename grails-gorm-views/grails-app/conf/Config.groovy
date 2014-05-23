@@ -93,14 +93,6 @@ environments {
     }
 }
 
-foo.bar.a = 1
-foo.bar.b = "asd"
-foo.bar.c = 1.2
-foo.bar.d = [1,2,3]
-foo.bar.e = [a: 2]
-foo.bar.f = new Object()
-
-
 // log4j configuration
 log4j = {
     // Example of changing the log pattern for the default console appender:
