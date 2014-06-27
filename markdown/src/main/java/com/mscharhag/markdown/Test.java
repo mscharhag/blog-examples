@@ -1,4 +1,4 @@
-package com.mscharhag;
+package com.mscharhag.markdown;
 
 
 public class Test {
