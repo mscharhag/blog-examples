@@ -37,7 +37,7 @@ public class Test {
 	 * @param id the user id
 	 * @return the user object with the passed `id` or `null` if no user with this `id` is found
 	 */
-	public User finAdUser(long id) {
+	public User findUser(long id) {
 		return null;
 	}
 
