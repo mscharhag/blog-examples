@@ -37,20 +37,27 @@ public class UserControllerIntegrationTest {
 	}
 
 	private TestResponse request(String method, String path) {
+		HttpURLConnection connection;
 		try {
 			URL url = new URL("http://localhost:4567" + path);
-			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod(method);
 			connection.setDoOutput(true);
-			connection.connect();
-			String body = IOUtils.toString(connection.getInputStream());
-			return new TestResponse(connection.getResponseCode(), body);
-		} catch (IOException e) {
+			//connection.connect();
+			if(connection.getResponseCode()>=200 && connection.getResponseCode()<300) {
+				String body = IOUtils.toString(connection.getInputStream());
+				return new TestResponse(connection.getResponseCode(), body);
+			} else {
+				String body = IOUtils.toString(connection.getErrorStream());
+				return new TestResponse(connection.getResponseCode(), body);
+			}
+		} catch (IOException e) {		
 			e.printStackTrace();
-			fail("Sending request failed: " + e.getMessage());
+			org.junit.Assert.fail("Sending request failed: " + e.getMessage());
 			return null;
 		}
 	}
+
 
 	private static class TestResponse {
 
