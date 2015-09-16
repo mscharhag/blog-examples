@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Spring Resource versioning</title>
+</head>
+<body>
+    <h1>Spring Resource versioning</h1>
+    <ul>
+        <li>
+            <a th:href="${urls.getForLookupPath('/javascript/test.js')}">${urls.getForLookupPath('/javascript/test.js')}</a>
+        </li>
+        <li>
+            <a th:href="${@mvcResourceUrlProvider.getForLookupPath('/javascript/test.js')}">${@mvcResourceUrlProvider.getForLookupPath('/javascript/test.js')}</a>
+        </li>
+        <li>
+            <a th:href="@{/javascript/test.js}">@{/javascript/test.js}</a>
+        </li>
+    </ul>
+</body>
+</html>
