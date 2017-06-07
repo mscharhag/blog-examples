@@ -1,0 +1,29 @@
+@import com.mscharhag.rockerexample.*
+@import java.util.*
+
+@args (List<User> users)
+
+@views.main.template("Loops") -> {
+    <ul>
+        <!-- standard for loop -->
+        @for (int i = 0; i < users.size(); i++) {
+            <li>@users.get(i).getFirstName()</li>
+        }
+
+        <!-- standard 'for each' loop -->
+        @for (User user : users) {
+            <li>@user.getFirstName()</li>
+        }
+
+        <!-- for each loop with additional loop information
+
+            <li>0: John, first: true, last: false</li>
+            <li>1: Martin, first: false, last: false</li>
+            <li>2: Anna, first: false, last: true</li>
+        -->
+        @for ((i, user) : users) {
+            <li>@i.index(): @user.getFirstName(), first: @i.first(), last: @i.last()</li>
+        }
+
+    </ul>
+}

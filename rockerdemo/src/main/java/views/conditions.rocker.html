@@ -1,0 +1,11 @@
+@import com.mscharhag.rockerexample.*
+
+@args (User user)
+
+@views.main.template("Conditions") -> {
+    @if (user.getFirstName().length() > 10) {
+        <p>Long first name</p>
+    } else {
+        <p>short first name</p>
+    }
+}

@@ -1,0 +1,31 @@
+@import com.mscharhag.rockerexample.*
+
+@args (User user)
+
+@views.main.template("Expressions") -> {
+    <ul>
+        <!-- first name -->
+        <li>@user.getFirstName()</li>
+
+        <!-- first three letters of first name -->
+        <li>@user.getFirstName().substring(0, 3)</li>
+
+        <!-- first name and last name -->
+        <li>@user.getFirstName() @user.getLastName()</li>
+
+        <!-- using a variable-->
+        @name => {
+            @user.getFirstName() @user.getLastName()
+        }
+        <li>@name</li>
+
+
+        <!-- null safe first name with the ? operator -->
+        <!-- By default a NullPointerException is thrown if an expression is thrown -->
+        <!-- Note: This helps only if getFirstName() returns null, If user is null it will still crash -->
+        <li>@?user.getFirstName()</li>
+
+
+        <li>@user.getFirstName()?:"Empty"</li>
+    </ul>
+}
