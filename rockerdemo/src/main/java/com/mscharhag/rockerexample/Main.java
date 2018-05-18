@@ -9,25 +9,21 @@ import java.util.List;
 public class Main {
 
     public static void main(String... args) throws Exception {
-
-//        Class<?> bootstrapType = Class.forName("com.fizzed.rocker.reload.RockerClassLoader");
-
-
-
         RockerRuntime.getInstance().setReloading(true); // PR
-
 
         String output = null;
 
-//        output = views.basic.template("John")
+        output = views.basic.template("John")
+                .render()
+                .toString();
+
+
+//        output = Rocker.template("views/basic.rocker.html")
+//                .bind("name", "John")
 //                .render()
 //                .toString();
 
-        output = Rocker.template("views/basic.rocker.html")
-                .bind("name", "John")
-                .render()
-                .toString();
-//
+
 //        output = Rocker.template("views/expressions.rocker.html")
 //                .bind("user", new User("Joe", "Smith"))
 //                .render()
@@ -39,6 +35,7 @@ public class Main {
 //                .render()
 //                .toString();
 
+
 //        List<User> users = Arrays.asList(
 //            new User("John", "Foo"),
 //            new User("Martin", "Bar"),
@@ -48,6 +45,8 @@ public class Main {
 //                .bind("users", users)
 //                .render()
 //                .toString();
+
+
         System.out.println(output);
     }
 }
