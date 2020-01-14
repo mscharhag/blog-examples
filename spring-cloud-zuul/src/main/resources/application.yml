@@ -1,0 +1,20 @@
+zuul:
+  routes:
+    users:
+      path: /users/**
+      url: https://users.myapi.com
+    projects:
+      path: /projects/**
+      serviceId: project_service
+    demo:
+      path: /demo/**
+      url: http://localhost:8080
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization,Auth-Token
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+server:
+  port: 8081
