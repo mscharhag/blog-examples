@@ -1,0 +1,10 @@
+{
+  "name": "Mona Lisa",
+  "artist": "Leonardo da Vinci",
+  "description": null,
+  "dimension": {
+    "height": 53.0,
+    "width": 77.0
+  },
+  "tags": ["oil", "famous"]
+}
