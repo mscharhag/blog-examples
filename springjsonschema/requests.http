@@ -1,0 +1,34 @@
+# IntelliJ REST client file
+# See https://www.mscharhag.com/intellij/http-client
+
+POST http://localhost:8080/paintings
+Content-Type: application/json
+
+{
+  "name": "Mona Lisa",
+  "artist": "Leonardo da Vinci",
+  "description": null,
+  "dimension": {
+    "height": 53.0,
+    "width": 77.0
+  },
+  "tags": [
+    "oil",
+    "famous"
+  ]
+}
+
+###
+
+POST http://localhost:8080/paintings
+Content-Type: application/json
+
+{
+  "name": "Mona Lisa",
+  "artist": null,
+  "description": null,
+  "tags": [
+    "oil",
+    "famous"
+  ]
+}
