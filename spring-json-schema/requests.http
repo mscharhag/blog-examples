@@ -9,8 +9,8 @@ Content-Type: application/json
   "artist": "Leonardo da Vinci",
   "description": null,
   "dimension": {
-    "height": 53.0,
-    "width": 77.0
+    "height": 77.0,
+    "width": 53.0
   },
   "tags": [
     "oil",
@@ -27,6 +27,10 @@ Content-Type: application/json
   "name": "Mona Lisa",
   "artist": null,
   "description": null,
+  "dimension": {
+    "height": -77,
+    "width": 53
+  },
   "tags": [
     "oil",
     "famous"

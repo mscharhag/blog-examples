@@ -72,13 +72,13 @@ public class JsonSchemaValidatingArgumentResolver implements HandlerMethodArgume
         return schemaCache.computeIfAbsent(schemaPath, path -> {
             Resource resource = resourcePatternResolver.getResource(path);
             if (!resource.exists()) {
-                throw new JsonSchemaValidationException("Schema file does not exist, path: " + path);
+                throw new JsonSchemaLoadingFailedException("Schema file does not exist, path: " + path);
             }
             JsonSchemaFactory schemaFactory = JsonSchemaFactory.getInstance(SpecVersion.VersionFlag.V201909);
             try (InputStream schemaStream = resource.getInputStream()) {
                 return schemaFactory.getSchema(schemaStream);
             } catch (Exception e) {
-                throw new JsonSchemaValidationException("An error occurred while loading JSON Schema, path: " + path, e);
+                throw new JsonSchemaLoadingFailedException("An error occurred while loading JSON Schema, path: " + path, e);
             }
         });
     }
