@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.mscharhag.springjsonschema.JsonSchemas.PAINTING;
+import static com.mscharhag.springjsonschema.SchemaLocations.PAINTING;
 
 @RestController
 public class PaintingController {

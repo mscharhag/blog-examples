@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mscharhag</groupId>
-	<artifactId>springjsonschema</artifactId>
+	<artifactId>spring-json-schema</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springjsonschema</name>
+	<name>spring-json-schema</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
