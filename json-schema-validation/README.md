@@ -1,4 +1,5 @@
-# JSON Schema validation in Java
+JSON Schema validation in Java
+=============
 
 Example project for my blog post: [JSON Schema validation in Java][1]
 

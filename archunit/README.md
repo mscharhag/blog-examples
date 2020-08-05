@@ -1,4 +1,5 @@
-#Validating code and architecture constraints with ArchUnit
+Validating code and architecture constraints with ArchUnit
+=============
 
 Example project for my blog post [Validating code and architecture constraints with ArchUnit][1]
 
