@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.mscharhag.archunit;
 
 import com.tngtech.archunit.junit.AnalyzeClasses;
 import com.tngtech.archunit.junit.ArchTest;
@@ -10,7 +10,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.*;
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 import static com.tngtech.archunit.library.GeneralCodingRules.NO_CLASSES_SHOULD_THROW_GENERIC_EXCEPTIONS;
 
-@AnalyzeClasses(packages = "com.example.demo")
+@AnalyzeClasses(packages = "com.mscharhag.archunit")
 public class ArchUnitTest {
 
     // verify that classes whose name name ends with "Service" should be located in a "service" package
@@ -18,7 +18,6 @@ public class ArchUnitTest {
     private final ArchRule services_are_located_in_service_package = classes()
             .that().haveSimpleNameEndingWith("Service")
             .should().resideInAPackage("..service");
-
 
     // verify that logger fields are private, static and final
     @ArchTest
@@ -28,18 +27,17 @@ public class ArchUnitTest {
                     .andShould().beStatic()
                     .andShould().beFinal();
 
-    // verify that interfaces are not located in implementation packages
-    @ArchTest
-    static final ArchRule interfaces_should_not_be_placed_in_impl_packages = noClasses()
-            .that().resideInAPackage("..impl..")
-                    .should().beInterfaces();
-
     // methods in classes whose name ends with "Util" should be static
     @ArchTest
     static final ArchRule utility_methods_should_be_static = methods()
             .that().areDeclaredInClassesThat().haveSimpleNameEndingWith("Util")
                     .should().beStatic();
 
+    // verify that interfaces are not located in implementation packages
+    @ArchTest
+    static final ArchRule interfaces_should_not_be_placed_in_impl_packages = noClasses()
+            .that().resideInAPackage("..impl..")
+            .should().beInterfaces();
 
     @ArchTest
     static final ArchRule only_repositories_should_use_entityManager = noClasses()
@@ -48,11 +46,9 @@ public class ArchUnitTest {
 
     @ArchTest
     static final ArchRule layer_dependencies_are_respected = layeredArchitecture()
-
-            .layer("Controllers").definedBy("com.example.demo.layers.controller..")
-            .layer("Services").definedBy("com.example.demo.layers.service..")
-            .layer("Repositories").definedBy("com.example.demo.layers.repository..")
-
+            .layer("Controllers").definedBy("com.mscharhag.archunit.layers.controller..")
+            .layer("Services").definedBy("com.mscharhag.archunit.layers.service..")
+            .layer("Repositories").definedBy("com.mscharhag.archunit.layers.repository..")
             .whereLayer("Controllers").mayNotBeAccessedByAnyLayer()
             .whereLayer("Services").mayOnlyBeAccessedByLayers("Controllers")
             .whereLayer("Repositories").mayOnlyBeAccessedByLayers("Services");

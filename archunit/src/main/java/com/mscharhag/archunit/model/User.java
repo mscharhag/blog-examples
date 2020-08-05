@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.mscharhag.archunit.model;
 
 import javax.persistence.Entity;
 

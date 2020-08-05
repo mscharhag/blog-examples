@@ -1,8 +1,8 @@
-package com.example.demo.layers.service.impl;
+package com.mscharhag.archunit.layers.service.impl;
 
-import com.example.demo.layers.repository.UserRepository;
-import com.example.demo.layers.service.UserService;
-import com.example.demo.model.User;
+import com.mscharhag.archunit.layers.repository.UserRepository;
+import com.mscharhag.archunit.layers.service.UserService;
+import com.mscharhag.archunit.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

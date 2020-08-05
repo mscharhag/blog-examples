@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.mscharhag.archunit;
 
 import java.security.SecureRandom;
 

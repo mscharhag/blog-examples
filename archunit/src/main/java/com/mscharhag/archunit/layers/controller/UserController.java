@@ -1,7 +1,7 @@
-package com.example.demo.layers.controller;
+package com.mscharhag.archunit.layers.controller;
 
-import com.example.demo.layers.service.UserService;
-import com.example.demo.model.User;
+import com.mscharhag.archunit.layers.service.UserService;
+import com.mscharhag.archunit.model.User;
 
 
 public class UserController {

@@ -1,6 +1,6 @@
-package com.example.demo.layers.repository;
+package com.mscharhag.archunit.layers.repository;
 
-import com.example.demo.model.User;
+import com.mscharhag.archunit.model.User;
 
 import javax.persistence.EntityManager;
 
