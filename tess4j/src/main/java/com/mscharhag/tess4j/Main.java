@@ -12,7 +12,7 @@ import java.nio.file.Paths;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        File tmpFolder = LoadLibs.extractTessResources("win32-x86-64");
+        File tmpFolder = LoadLibs.extractTessResources("win32-x86-64"); // Change this argument, depending on your platform
         System.setProperty("java.library.path", tmpFolder.getPath());
         System.out.println("native libraries extracted to: " + tmpFolder.getPath());
 
