@@ -1,0 +1,39 @@
+# This is an IntelliJ HTTP client file
+# See: https://www.mscharhag.com/intellij/http-client
+
+
+# John is allowed to update his project
+POST http://localhost:8080/projects/1?name=foo
+Authorization: Basic John password
+
+###
+
+# Anna is not allowed to update John's project
+POST http://localhost:8080/projects/1?name=bar
+Authorization: Basic Anna password
+
+###
+
+# Anna is allowed to update her project
+POST http://localhost:8080/projects/2?name=baz
+Authorization: Basic Anna password
+
+###
+
+# John is not allowed to update Anna's project
+GET http://localhost:8080/projects/2?name=bla
+Authorization: Basic John password
+
+###
+
+GET http://localhost:8080/internal/foo
+Authorization: Basic John password
+
+###
+
+GET http://localhost:8080/users/Anna/profile
+Authorization: Basic John password
+
+###
+GET http://localhost:8080/test
+Authorization: Basic Anna password
