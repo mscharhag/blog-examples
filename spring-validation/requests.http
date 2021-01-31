@@ -1,0 +1,9 @@
+POST http://localhost:8080/address
+Content-Type: application/json
+
+{
+  "street": "test street",
+  "city": "testingen",
+  "zipCode": "1223423444323345",
+  "country": "test"
+}
