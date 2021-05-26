@@ -11,4 +11,5 @@ public class ArticleNotFoundException extends RuntimeException {
     public ArticleId getArticleId() {
         return articleId;
     }
+
 }
